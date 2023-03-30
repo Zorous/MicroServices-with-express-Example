@@ -48,7 +48,7 @@ console.error(error);
 }
 
 
-app.post("/commande/ajouter", async (req, res, next) => {
+app.post("/commande/ajouter",isAuthenticated, async (req, res, next) => {
 // Création d'une nouvelle commande dans la collection commande
 const { ids, email_utilisateur } = req.body;
 httpRequest(req.body.ids).then(total => {
